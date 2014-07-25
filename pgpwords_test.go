@@ -18,7 +18,7 @@ func TestEncodeWords(t *testing.T) {
 
 	for _, tt := range tst16 {
 		if enc := Encode16(tt.in); enc != tt.out {
-			t.Errorf("Encode16(%s) failed: got '%v' expected '%v'", tt.in, enc, tt.out)
+			t.Errorf("Encode16(%d) failed: got '%v' expected '%v'", tt.in, enc, tt.out)
 		}
 	}
 
@@ -32,7 +32,7 @@ func TestEncodeWords(t *testing.T) {
 
 	for _, tt := range tst32 {
 		if enc := Encode32(tt.in); enc != tt.out {
-			t.Errorf("Encode32(%s) failed: got '%v' expected '%v'", tt.in, enc, tt.out)
+			t.Errorf("Encode32(%d) failed: got '%v' expected '%v'", tt.in, enc, tt.out)
 		}
 	}
 
@@ -43,6 +43,6 @@ func TestEncode(t *testing.T) {
 	out := `topmost Istanbul Pluto vagabond treadmill Pacific brackish dictator`
 
 	if enc := Encode(in); enc != out {
-		t.Errorf("Encode(%s) failed: got '%v' expected '%v'", enc, out)
+		t.Errorf("Encode(% 02x) failed: got '%v' expected '%v'", in, enc, out)
 	}
 }
